@@ -1,0 +1,17 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: udagram-dev
+  region: us-west-2
+  version: '1.14'
+
+nodeGroups:
+  - name: linux-ng
+    instanceType: t2.large
+    minSize: 2
+  - name: windows-ng
+    instanceType: m5.large
+    minSize: 2
+    volumeSize: 100
+    amiFamily: WindowsServer2019FullContainer
